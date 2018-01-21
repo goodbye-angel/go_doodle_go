@@ -9,6 +9,11 @@ mongoose.Promise = global.Promise;
 
 const PORT = process.env.PORT || 3000;
 
+// database
+const mongoURI = process.env.MONGODB_URI ||
+'mongodb://localhost:27017/go_doodle_go'
+mongoose.connect(mongoURI, { useMongoClient: true });
+
 // enable static assets
 const path = require('path');
 app.use(express.static(path.join(__dirname, 'public')));
