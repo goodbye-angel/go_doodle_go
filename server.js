@@ -9,6 +9,28 @@ mongoose.Promise = global.Promise;
 
 const PORT = process.env.PORT || 3000;
 
+// enable static assets
+const path = require('path');
+app.use(express.static(path.join(__dirname, 'public')));
+
+// enable req.body
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
+// enable delete
+const methodOverride = require('method-override');
+app.use(methodOverride('_method'));
+
+// enable sessions
+app.use(session({
+  secret: "somanycatssolittletime",
+  resave: false,
+  saveUninitialized: false
+}));
+
+// controllers
+
+// root route
 
 // listen
 app.listen(PORT, () => {
