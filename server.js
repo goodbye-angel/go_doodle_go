@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3000;
 // database
 const mongoURI = process.env.MONGODB_URI ||
 'mongodb://localhost:27017/go_doodle_go'
-mongoose.connect(mongoURI, { useMongoClient: true });
+mongoose.connect(mongoURI);
 
 // enable static assets
 const path = require('path');
@@ -34,8 +34,14 @@ app.use(session({
 }));
 
 // controllers
+// const DoodlesController = require('./controllers/doodles.js');
+// app.use('/doodles', DoodlesController);
 
-// root route
+const UsersController = require('./controllers/users.js');
+app.use('/users', UsersController);
+
+const SessionsController = require('./controllers/sessions.js');
+app.use('/sessions', SessionsController);
 
 // listen
 app.listen(PORT, () => {

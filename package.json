@@ -17,10 +17,14 @@
   },
   "homepage": "https://github.com/goodbye-angel/go_doodle_go#readme",
   "dependencies": {
+    "bcrypt": "^1.0.3",
+    "e": "0.0.4",
+    "ejs": "^2.5.7",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
     "method-override": "^2.3.10",
     "mongoose": "^5.0.1",
+    "mongoose-unique-validator": "^1.0.6",
     "paper": "^0.11.5",
     "pretty-error": "^2.1.1"
   }
