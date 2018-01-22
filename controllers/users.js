@@ -18,7 +18,7 @@ router.post('/register', async (req, res) => {
 
 // new
 router.get('/register', (req, res) => {
-  // res.render('users/new.ejs');
+  res.render('users/new.ejs');
 });
 
 module.exports = router;

@@ -10,7 +10,7 @@ const User = require('../models/users.js');
 
 // new
 router.get('/login', (req, res) => {
-  // res.render('sessions/new.ejs');
+  res.render('sessions/new.ejs');
 });
 
 // create
@@ -21,13 +21,14 @@ router.post('/login', async (req, res) => {
     console.log("User logged in is:", foundUser)
     res.redirect('/');
   } else {
-    // res.render('sessions/wrong.ejs');
+    res.render('sessions/wrong.ejs');
   }
 });
 
 // delete
 router.delete('/', async (req, res) => {
   await req.session.destroy();
+  console.log('Logged out');
   res.redirect('/');
 });
 

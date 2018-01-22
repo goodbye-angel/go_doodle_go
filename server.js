@@ -19,7 +19,7 @@ const path = require('path');
 app.use(express.static(path.join(__dirname, 'public')));
 
 // enable req.body
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // enable delete
@@ -34,14 +34,19 @@ app.use(session({
 }));
 
 // controllers
-// const DoodlesController = require('./controllers/doodles.js');
-// app.use('/doodles', DoodlesController);
+const DoodlesController = require('./controllers/doodles.js');
+app.use('/doodles', DoodlesController);
 
 const UsersController = require('./controllers/users.js');
 app.use('/users', UsersController);
 
 const SessionsController = require('./controllers/sessions.js');
 app.use('/sessions', SessionsController);
+
+// root route
+app.get('/', (req, res) => {
+  res.redirect('/doodles');
+});
 
 // listen
 app.listen(PORT, () => {
