@@ -1,9 +1,91 @@
 body {
-  background-color: deepskyblue;
+  background-color: #d282fc;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 50px;
+  color: #5920bc;
+  margin: 0 auto;
+  padding: 10px;
 }
 
 #newCanvas {
+  width: 500px;
+  height: 600px;
+  margin: 0 auto;
+  background-color: #fffcff;
+  border: 5px solid #330f1e;
+  border-radius: 3px;
+}
+
+#color-picker {
+  margin: 5px auto;
+  display: flex;
   width: 400px;
-  height: 400px;
-  background-color: lightgrey;
+  height: 50px;
+}
+
+.color {
+  margin: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 3px;
+}
+
+#red {
+  background-color: red;
+}
+
+#orange {
+  background-color: orange;
+}
+
+#yellow {
+  background-color: yellow;
+}
+
+#green {
+  background-color: green;
+}
+
+#blue {
+  background-color: blue;
+}
+
+#purple {
+  background-color: purple;
+}
+
+#pink {
+  background-color: hotpink;
+}
+
+#black {
+  background-color: black;
+}
+
+.navicon {
+  width: 35px;
+  height: 5px;
+  background-color: #330f1e;
+  margin: 6px 0;
+}
+
+#navicon-all {
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	cursor: pointer;
+}
+
+#buttons {
+  margin: 5px auto;
+}
+
+button {
+  width: 100px;
+  margin: 5px;
 }

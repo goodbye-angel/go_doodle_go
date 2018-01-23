@@ -1,14 +1,46 @@
 <!DOCTYPE html>
 <html>
   <head>
+
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
     <script type="text/javascript" src="/js/paper-full.js" async></script>
+    <script src="/js/jquery.min.js"></script>
     <script type="text/paperscript" src="/js/paperScript.js" canvas="newCanvas" async></script>
     <link href="/css/style.css" rel="stylesheet" type="text/css">
+
     <title>GoDoodleGo!</title>
+
   </head>
+
   <body>
-    things
+
+    <h1>GoDoodleGo!</h1>
+
+    <div id="navicon-all">
+      <div class="navicon"></div>
+      <div class="navicon"></div>
+      <div class="navicon"></div>
+    </div>
+
+    <div id="color-picker">
+      <div class="color" id="red"></div>
+      <div class="color" id="orange"></div>
+      <div class="color" id="yellow"></div>
+      <div class="color" id="green"></div>
+      <div class="color" id="blue"></div>
+      <div class="color" id="purple"></div>
+      <div class="color" id="pink"></div>
+      <div class="color" id="black"></div>
+    </div>
+
     <canvas id="newCanvas"></canvas>
+
+    <div id="buttons">
+      <button id="save-button">Save</button>
+      <button id="clear-button">Clear</button>
+      <button id="undo-button">Undo</button>
+    </div>
+
   </body>
 </html>
