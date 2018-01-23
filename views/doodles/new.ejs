@@ -17,6 +17,10 @@
 
     <h1>GoDoodleGo!</h1>
 
+    <% if (currentUser) { %>
+    <p id="welcome">Hey there, <%=currentUser.username%>!</p>
+    <% } %>
+
     <script>
     function openNav() {
         document.getElementById("sidenav").style.width = "200px";
@@ -37,12 +41,14 @@
       <a href="javascript:void(0)" onclick="closeNav()">X</a>
 
       <%if (!currentUser) { %>
-      <a href="#">Log in</a>
-      <a href="#">Sign up</a>
+      <a href="/sessions/login">Log in</a>
+      <a href="/users/register">Sign up</a>
       <% } %>
 
       <% if (currentUser) { %>
-      <a href="#">Log out</a>
+      <form action="/sessions?_method=DELETE" method="POST">
+        <button type="submit" id="logout">Logout</button>
+      </form>
       <a href="#">Your Doodles</a>
       <a href="#">Friends</a>
       <a href="#">Profile</a>
