@@ -3,7 +3,7 @@
   <head>
 
     <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|PT+Sans" rel="stylesheet">
     <script type="text/javascript" src="/js/paper-full.js" async></script>
     <script src="/js/jquery.min.js"></script>
     <script type="text/paperscript" src="/js/paperScript.js" canvas="newCanvas" async></script>
@@ -17,10 +17,30 @@
 
     <h1>GoDoodleGo!</h1>
 
-    <div id="navicon-all">
+    <script>
+    function openNav() {
+        document.getElementById("sidenav").style.width = "200px";
+    }
+
+    function closeNav() {
+        document.getElementById("sidenav").style.width = "0";
+    }
+    </script>
+
+    <div onclick="openNav()" id="navicon-all">
       <div class="navicon"></div>
       <div class="navicon"></div>
       <div class="navicon"></div>
+    </div>
+
+    <div id="sidenav">
+      <a href="javascript:void(0)" onclick="closeNav()">X</a>
+      <a href="#">Log in</a>
+      <a href="#">Sign up</a>
+      <a href="#">Your Doodles</a>
+      <a href="#">Friends</a>
+      <a href="#">Profile</a>
+      <a href="#">About</a>
     </div>
 
     <div id="color-picker">

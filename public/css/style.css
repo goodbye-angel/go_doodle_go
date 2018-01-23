@@ -1,4 +1,5 @@
 body {
+  font-family: 'PT Sans', sans-serif;
   background-color: #d282fc;
   display: flex;
   flex-direction: column;
@@ -33,6 +34,10 @@ h1 {
   width: 40px;
   height: 40px;
   border-radius: 3px;
+}
+
+.color:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 100, 0.2), 0 6px 20px 0 rgba(0, 0, 100, 0.19);
 }
 
 #red {
@@ -88,4 +93,31 @@ h1 {
 button {
   width: 100px;
   margin: 5px;
+}
+
+#sidenav {
+  height: 400px;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #02a9ea;
+  overflow-x: hidden;
+  padding-top: 30px;
+  border-radius: 3px;
+  transition: 0.5s;
+}
+
+#sidenav a {
+  padding: 10px 30px 10px 10px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #330f1e;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #452432;
 }
