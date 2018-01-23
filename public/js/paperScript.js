@@ -1,5 +1,6 @@
 var path;
 var color = 'black';
+var doodleData = null;
 
 function onMouseDown(event) {
   path = new Path();
@@ -12,8 +13,8 @@ function onMouseDrag(event) {
 }
 
 $('#save-button').click(function() {
-  var doodle = project.exportSVG({ asString: true });
-  console.log(doodle);
+  doodleData = project.exportSVG({ asString: true });
+  console.log(doodleData);
 });
 
 $('#clear-button').click(function() {
