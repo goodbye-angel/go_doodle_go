@@ -19,6 +19,10 @@
 
     <% if (currentUser) { %>
     <p id="welcome">Hey there, <%=currentUser.username%>!</p>
+    <script>
+    var id = "<%=currentUser._id%>";
+    console.log(id);
+    </script>
     <% } %>
 
     <script>
@@ -49,7 +53,7 @@
       <form action="/sessions?_method=DELETE" method="POST">
         <button type="submit" id="logout">Logout</button>
       </form>
-      <a href="#">Your Doodles</a>
+      <a href="/doodles/all">Your Doodles</a>
       <a href="#">Friends</a>
       <a href="#">Profile</a>
       <% } %>

@@ -35,7 +35,8 @@ function post(path, parameters) {
 $('#save-button').click(function() {
   doodleData = project.exportSVG({ asString: true });
   console.log(doodleData);
-  post('/doodles/', { doodle: doodleData });
+  post('/doodles/', { doodle: doodleData, user: id });
+  console.log("The user id is:", id);
 });
 
 $('#clear-button').click(function() {

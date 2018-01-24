@@ -9,14 +9,14 @@ const Doodles = require('../models/doodles.js');
 
 // index (friends page)
 router.get('/friends', async (req, res) => {
-  const allUserDoodles = await Doodles.find();
-  res.render('doodles/friends.ejs', allUserDoodles);
+  const friendDoodles = await Doodles.find();
+  res.render('doodles/friends.ejs', friendDoodles);
 });
 
 // index (current user's doodles)
 router.get('/all', async (req, res) => {
-  const currentUserDoodles = await Doodles.find();
-  res.render('doodles/all.ejs', { currentUserDoodles, currentUser: req.session.currentuser });
+  const allDoodles = await Doodles.find();
+  res.render('doodles/all.ejs', { allDoodles, currentUser: req.session.currentuser });
 });
 
 // new (main page)
@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
 // create
 router.post('/', async (req, res) => {
   await Doodles.create(req.body);
-  res.redirect('/');
+  res.redirect('/all');
 });
 
 // show
