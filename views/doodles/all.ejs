@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|PT+Sans" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="/js/paper-full.js" async></script>
+    <script src="/js/jquery.min.js"></script>
 
     <title>Your doodles!</title>
 
@@ -15,7 +17,9 @@
 
     <% for (let doodle of allDoodles) { %>
       <% if (doodle.user == currentUser._id) { %>
-        <p><%=doodle.doodle%></p>
+        <div class="all-doodles">
+          <%- doodle.doodle %>
+        </div>
     <% } %>
     <% } %>
 

@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
 // create
 router.post('/', async (req, res) => {
   await Doodles.create(req.body);
-  res.redirect('/all');
+  res.redirect('/');
 });
 
 // show

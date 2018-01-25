@@ -15,7 +15,16 @@ h1 {
   padding: 10px;
 }
 
-#newCanvas {
+canvas {
+  width: 500px;
+  height: 600px;
+  margin: 0 auto;
+  background-color: #fffcff;
+  border: 5px solid #330f1e;
+  border-radius: 3px;
+}
+
+.all-doodles {
   width: 500px;
   height: 600px;
   margin: 0 auto;
