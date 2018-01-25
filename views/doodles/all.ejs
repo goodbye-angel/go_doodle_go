@@ -15,6 +15,50 @@
 
     <h1>Your doodles!</h1>
 
+      <% if (currentUser) { %>
+      <p id="welcome">Hey there, <%=currentUser.username%>!</p>
+      <script>
+      var id = "<%=currentUser._id%>";
+      console.log(id);
+      </script>
+      <% } %>
+
+      <script>
+      function openNav() {
+          document.getElementById("sidenav").style.width = "200px";
+      }
+
+      function closeNav() {
+          document.getElementById("sidenav").style.width = "0";
+      }
+      </script>
+
+      <div onclick="openNav()" id="navicon-all">
+        <div class="navicon"></div>
+        <div class="navicon"></div>
+        <div class="navicon"></div>
+      </div>
+
+      <div id="sidenav">
+        <a href="javascript:void(0)" onclick="closeNav()">X</a>
+
+        <%if (!currentUser) { %>
+        <a href="/sessions/login">Log in</a>
+        <a href="/users/register">Sign up</a>
+        <% } %>
+
+        <% if (currentUser) { %>
+        <form action="/sessions?_method=DELETE" method="POST">
+          <button type="submit" id="logout">Logout</button>
+        </form>
+        <a href="/doodles/">New Doodle</a>
+        <a href="#">Friends</a>
+        <a href="#">Profile</a>
+        <% } %>
+
+        <a href="#">About</a>
+      </div>
+
     <% for (let doodle of allDoodles) { %>
       <% if (doodle.user == currentUser._id) { %>
         <div class="all-doodles">
