@@ -25,10 +25,9 @@ canvas {
 }
 
 .all-doodles {
-  width: 500px;
-  height: 600px;
+  width: 510px;
+  height: 610px;
   margin: 10px auto;
-
   background-color: #fffcff;
   border: 5px solid #330f1e;
   border-radius: 3px;

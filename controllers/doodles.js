@@ -10,7 +10,7 @@ const Doodles = require('../models/doodles.js');
 // index (friends page)
 router.get('/friends', async (req, res) => {
   const friendDoodles = await Doodles.find();
-  res.render('doodles/friends.ejs', friendDoodles);
+  res.render('doodles/friends.ejs', { friendDoodles, currentUser: req.session.currentuser });
 });
 
 // index (current user's doodles)

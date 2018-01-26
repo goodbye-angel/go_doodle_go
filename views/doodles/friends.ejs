@@ -1,10 +1,73 @@
 <!DOCTYPE html>
 <html>
   <head>
+
     <meta charset="utf-8">
-    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|PT+Sans" rel="stylesheet">
+    <script type="text/javascript" src="/js/paper-full.js" async></script>
+    <script src="/js/jquery.min.js"></script>
+    <script type="text/paperscript" src="/js/paperScript.js" canvas="newCanvas" async></script>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+
+    <title>Friends' Doodles!</title>
+
   </head>
+
   <body>
-    View friends' doodles
+
+    <h1>Friends' Doodles!</h1>
+
+      <% if (currentUser) { %>
+      <p id="welcome">Hey there, <%=currentUser.username%>!</p>
+      <script>
+      var id = "<%=currentUser._id%>";
+      console.log(id);
+      </script>
+      <% } %>
+
+      <script>
+      function openNav() {
+          document.getElementById("sidenav").style.width = "200px";
+      }
+
+      function closeNav() {
+          document.getElementById("sidenav").style.width = "0";
+      }
+      </script>
+
+      <div onclick="openNav()" id="navicon-all">
+        <div class="navicon"></div>
+        <div class="navicon"></div>
+        <div class="navicon"></div>
+      </div>
+
+      <div id="sidenav">
+        <a href="javascript:void(0)" onclick="closeNav()">X</a>
+
+        <%if (!currentUser) { %>
+        <a href="/sessions/login">Log in</a>
+        <a href="/users/register">Sign up</a>
+        <% } %>
+
+        <% if (currentUser) { %>
+        <form action="/sessions?_method=DELETE" method="POST">
+          <button type="submit" id="logout">Logout</button>
+        </form>
+        <a href="/doodles/all">Your Doodles</a>
+        <a href="/doodles/">New Doodle</a>
+        <a href="#">Profile</a>
+        <% } %>
+
+        <a href="#">About</a>
+      </div>
+
+    <%if (currentUser) { %>
+    <% for (let doodle of friendDoodles) { %>
+      <div class="all-doodles">
+        <%- doodle.doodle %>
+      </div>
+    <% } %>
+    <% } %>
+
   </body>
 </html>
