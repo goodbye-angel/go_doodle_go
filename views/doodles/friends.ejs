@@ -6,7 +6,6 @@
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|PT+Sans" rel="stylesheet">
     <script type="text/javascript" src="/js/paper-full.js" async></script>
     <script src="/js/jquery.min.js"></script>
-    <script type="text/paperscript" src="/js/paperScript.js" canvas="newCanvas" async></script>
     <link href="/css/style.css" rel="stylesheet" type="text/css">
 
     <title>Friends' Doodles!</title>
@@ -61,13 +60,27 @@
         <a href="#">About</a>
       </div>
 
-    <%if (currentUser) { %>
-    <% for (let doodle of friendDoodles) { %>
-      <div class="all-doodles">
-        <%- doodle.doodle %>
-      </div>
-    <% } %>
-    <% } %>
+      <% for (let i = 0; i < friendDoodles.length; i++) { %>
+        <% if (friendDoodles[i].user != currentUser._id) { %>
+          <script type="text/paperscript" canvas="canvas[<%=i%>]">
+            var path;
+            var color = 'black';
+
+            function onMouseDown(event) {
+              path = new Path();
+              path.strokeColor = color;
+              path.strokeWidth = 5;
+            }
+
+            function onMouseDrag(event) {
+              path.add(event.point);
+            }
+
+            project.importSVG('<%- friendDoodles[i].doodle %>');
+          </script>
+          <canvas id="canvas[<%=i%>]" class="all-doodles"></canvas>
+      <% } %>
+      <% } %>
 
   </body>
 </html>

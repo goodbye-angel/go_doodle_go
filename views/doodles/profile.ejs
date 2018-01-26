@@ -6,7 +6,30 @@
    </head>
    <body>
      <% if (doodle.user == currentUser._id) { %>
-        
+
      <% } %>
    </body>
  </html>
+
+ <script type="text/paperscript" canvas="canvas2">
+   var path;
+   var color = 'black';
+
+   function onMouseDown(event) {
+     path = new Path();
+     path.strokeColor = color;
+     path.strokeWidth = 5;
+   }
+
+   function onMouseDrag(event) {
+     path.add(event.point);
+   }
+
+   project.importSVG('<%- doodle.doodle %>');
+ </script>
+ <canvas id="canvas2" class="all-doodles"></canvas>
+
+
+ <div class="all-doodles">
+   <%- doodle.doodle %>
+ </div>
