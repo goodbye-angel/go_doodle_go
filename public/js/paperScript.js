@@ -1,7 +1,7 @@
 var path;
 var color = 'black';
 var doodleData = null;
-var width = 5
+var width = 5;
 
 function onMouseDown(event) {
   path = new Path();
@@ -80,12 +80,16 @@ $('#black').click(function() {
   color = 'black';
 });
 
+$('#white').click(function() {
+  color = '#fffcff';
+})
+
 $('#incr-size').click(function() {
-  width++;
+  width+=2;
 });
 
 $('#decr-size').click(function() {
-  width--;
+  width-=2;
 });
 
 $('#reset-size').click(function() {
