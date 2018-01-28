@@ -24,13 +24,13 @@
       </script>
       <% } %>
 
-      <script>
+    <script>
       function openNav() {
-          document.getElementById("sidenav").style.width = "200px";
+        document.getElementById("sidenav").style.width = "200px";
       }
 
       function closeNav() {
-          document.getElementById("sidenav").style.width = "0";
+        document.getElementById("sidenav").style.width = "0";
       }
       </script>
 
@@ -60,8 +60,26 @@
         <a href="#">About</a>
       </div>
 
+       <div id="color-picker">
+         <div class="color" id="red"></div>
+         <div class="color" id="orange"></div>
+         <div class="color" id="yellow"></div>
+         <div class="color" id="green"></div>
+         <div class="color" id="blue"></div>
+         <div class="color" id="purple"></div>
+         <div class="color" id="pink"></div>
+         <div class="color" id="black"></div>
+       </div>
+
+       <div id="buttons">
+         <button id="save-button">Save</button>
+         <button id="undo-button">Undo</button>
+         <button id="clear-button">Clear</button>
+       </div>
+
       <% for (let i = 0; i < friendDoodles.length; i++) { %>
         <% if (friendDoodles[i].user != currentUser._id) { %>
+
           <script type="text/paperscript" canvas="canvas[<%=i%>]">
             var path;
             var color = 'black';
@@ -76,9 +94,78 @@
               path.add(event.point);
             }
 
+            function post(path, parameters) {
+                var form = $('<form></form>');
+
+                form.attr("method", "post");
+                form.attr("action", path);
+
+                $.each(parameters, function(key, value) {
+                    var field = $('<input></input>');
+
+                    field.attr("type", "hidden");
+                    field.attr("name", key);
+                    field.attr("value", value);
+
+                    form.append(field);
+                });
+
+                $(document.body).append(form);
+                form.submit();
+            }
+
+            $('#save-button').click(function() {
+              doodleData = project.exportSVG({ asString: true });
+              console.log(doodleData);
+              post('/doodles/', { doodle: doodleData, user: id });
+              console.log("The user id is:", id);
+            });
+
+            $('#clear-button').click(function() {
+              project.clear();
+            });
+
+            $('#undo-button').click(function() {
+              path.clear();
+            });
+
+            $('#red').click(function() {
+              color = 'red';
+            });
+
+            $('#orange').click(function() {
+              color = 'orange';
+            });
+
+            $('#yellow').click(function() {
+              color = 'yellow';
+            });
+
+            $('#green').click(function() {
+              color = 'green';
+            });
+
+            $('#blue').click(function() {
+              color = 'blue';
+            });
+
+            $('#purple').click(function() {
+              color = 'purple';
+            });
+
+            $('#pink').click(function() {
+              color = 'hotpink';
+            });
+
+            $('#black').click(function() {
+              color = 'black';
+            });
+
             project.importSVG('<%- friendDoodles[i].doodle %>');
           </script>
+
           <canvas id="canvas[<%=i%>]" class="all-doodles"></canvas>
+
       <% } %>
       <% } %>
 

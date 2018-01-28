@@ -83,6 +83,30 @@ canvas {
   background-color: black;
 }
 
+#stroke-width {
+  font-family: 'Permanent Marker', cursive;
+  display: flex;
+  margin: 0 auto;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.stroke-item {
+  margin: 5px;
+}
+
+#incr-size:hover {
+  text-shadow: 0 0 3px #5920bc;
+}
+
+#decr-size:hover {
+  text-shadow: 0 0 3px #5920bc;
+}
+
+#reset-size:hover {
+  text-shadow: 0 0 3px #5920bc;
+}
+
 .navicon {
   width: 35px;
   height: 5px;

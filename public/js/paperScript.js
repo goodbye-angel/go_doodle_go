@@ -1,11 +1,12 @@
 var path;
 var color = 'black';
 var doodleData = null;
+var width = 5
 
 function onMouseDown(event) {
   path = new Path();
   path.strokeColor = color;
-  path.strokeWidth = 5;
+  path.strokeWidth = width;
 }
 
 function onMouseDrag(event) {
@@ -77,4 +78,16 @@ $('#pink').click(function() {
 
 $('#black').click(function() {
   color = 'black';
+});
+
+$('#incr-size').click(function() {
+  width++;
+});
+
+$('#decr-size').click(function() {
+  width--;
+});
+
+$('#reset-size').click(function() {
+  width = 5;
 });
