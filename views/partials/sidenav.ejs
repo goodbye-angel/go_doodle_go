@@ -1,0 +1,34 @@
+<script>
+function openNav() {
+    document.getElementById("sidenav").style.width = "200px";
+}
+
+function closeNav() {
+    document.getElementById("sidenav").style.width = "0";
+}
+</script>
+
+<div onclick="openNav()" id="navicon-all">
+  <div class="navicon"></div>
+  <div class="navicon"></div>
+  <div class="navicon"></div>
+</div>
+
+<div id="sidenav">
+  <a href="javascript:void(0)" onclick="closeNav()">X</a>
+
+  <%if (!currentUser) { %>
+  <a href="/sessions/login">Log in</a>
+  <a href="/users/register">Sign up</a>
+  <% } %>
+
+  <% if (currentUser) { %>
+  <form action="/sessions?_method=DELETE" method="POST">
+    <button type="submit" id="logout">Logout</button>
+  </form>
+  <a href="/doodles/">New Doodle</a>
+  <a href="/doodles/community">Community</a>
+  <% } %>
+
+  <a href="#">About</a>
+</div>

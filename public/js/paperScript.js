@@ -91,7 +91,11 @@ $('#incr-size').click(function() {
 });
 
 $('#decr-size').click(function() {
-  width-=2;
+  if (width <= 1) {
+    width = 1;
+  } else {
+    width-=2;
+  }
 });
 
 $('#reset-size').click(function() {
