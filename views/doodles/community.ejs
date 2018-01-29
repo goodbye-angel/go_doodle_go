@@ -14,7 +14,7 @@
 
   <body>
 
-    <h1>Friends' Doodles!</h1>
+    <h1>Community Doodles!</h1>
 
       <% if (currentUser) { %>
       <p id="welcome">Hey there, <%=currentUser.username%>!</p>
@@ -54,7 +54,6 @@
         </form>
         <a href="/doodles/all">Your Doodles</a>
         <a href="/doodles/">New Doodle</a>
-        <a href="#">Profile</a>
         <% } %>
 
         <a href="#">About</a>
@@ -69,6 +68,14 @@
          <div class="color" id="purple"></div>
          <div class="color" id="pink"></div>
          <div class="color" id="black"></div>
+         <div class="color" id="white"></div>
+       </div>
+
+       <div id="stroke-width">
+         <div class="stroke-item">Brush size:</div>
+         <div class="stroke-item" id="incr-size">+</div>
+         <div class="stroke-item" id="decr-size">-</div>
+         <div class="stroke-item" id="reset-size">reset</div>
        </div>
 
        <div id="buttons">
@@ -77,17 +84,19 @@
          <button id="clear-button">Clear</button>
        </div>
 
-      <% for (let i = 0; i < friendDoodles.length; i++) { %>
-        <% if (friendDoodles[i].user != currentUser._id) { %>
+      <% for (let i = 0; i < communityDoodles.length; i++) { %>
+        <% if (communityDoodles[i].user != currentUser._id) { %>
 
           <script type="text/paperscript" canvas="canvas[<%=i%>]">
             var path;
             var color = 'black';
+            var doodleData = null;
+            var width = 5;
 
             function onMouseDown(event) {
               path = new Path();
               path.strokeColor = color;
-              path.strokeWidth = 5;
+              path.strokeWidth = width;
             }
 
             function onMouseDrag(event) {
@@ -161,11 +170,26 @@
               color = 'black';
             });
 
-            project.importSVG('<%- friendDoodles[i].doodle %>');
+            $('#white').click(function() {
+              color = '#fffcff';
+            });
+
+            $('#incr-size').click(function() {
+              width+=2;
+            });
+
+            $('#decr-size').click(function() {
+              width-=2;
+            });
+
+            $('#reset-size').click(function() {
+              width = 5;
+            });
+
+            project.importSVG('<%-communityDoodles[i].doodle%>');
           </script>
 
           <canvas id="canvas[<%=i%>]" class="all-doodles"></canvas>
-
       <% } %>
       <% } %>
 
