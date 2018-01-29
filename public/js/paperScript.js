@@ -2,6 +2,7 @@ var path;
 var color = 'black';
 var doodleData = null;
 var width = 5;
+var share = null;
 
 function onMouseDown(event) {
   path = new Path();
@@ -34,9 +35,10 @@ function post(path, parameters) {
 }
 
 $('#save-button').click(function() {
+  share = $('input[name="share"]:checked').val();
   doodleData = project.exportSVG({ asString: true });
   console.log(doodleData);
-  post('/doodles/', { doodle: doodleData, user: id });
+  post('/doodles/', { doodle: doodleData, share: share, user: id });
   console.log("The user id is:", id);
 });
 

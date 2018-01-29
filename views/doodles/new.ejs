@@ -83,10 +83,17 @@
 
     <div id="buttons">
       <% if (currentUser) { %>
-      <button id="save-button">Save</button>
+        <button id="save-button">Save</button>
+        <button id="undo-button">Undo</button>
+        <button id="clear-button">Clear</button><br>
+        <form>
+          Share doodle?
+          Yes<input type="radio" name="share" value="true">
+          No<input type="radio" name="share" value="false">
+        </form>
+      <% } else { %>
+        <p>Please log in or sign up to save a doodle!</p>
       <% } %>
-      <button id="undo-button">Undo</button>
-      <button id="clear-button">Clear</button>
     </div>
 
   </body>
