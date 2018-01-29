@@ -16,6 +16,9 @@ router.get('/login', (req, res) => {
 // create
 router.post('/login', async (req, res) => {
   const foundUser = await User.findOne({ username: req.body.username });
+  if (!foundUser) {
+    res.render('sessions/wrong.ejs');
+  }
   if(bcrypt.compareSync(req.body.password, foundUser.password)) {
     req.session.currentuser = foundUser;
     console.log("User logged in is:", foundUser)

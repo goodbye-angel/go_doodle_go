@@ -18,6 +18,14 @@ h1 {
   padding: 10px;
 }
 
+h2 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 40px;
+  color: #5920bc;
+  margin: 0 auto;
+  padding: 10px;
+}
+
 form {
   width: 250px;
   padding-top: 100px;
