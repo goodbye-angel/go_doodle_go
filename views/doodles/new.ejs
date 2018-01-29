@@ -82,7 +82,9 @@
     <canvas id="newCanvas"></canvas>
 
     <div id="buttons">
+      <% if (currentUser) { %>
       <button id="save-button">Save</button>
+      <% } %>
       <button id="undo-button">Undo</button>
       <button id="clear-button">Clear</button>
     </div>
