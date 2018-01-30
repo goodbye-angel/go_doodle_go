@@ -34,7 +34,7 @@
         </div>
 
         <form action="/doodles/<%= doodle._id %>?_method=DELETE" method="POST">
-          <button type="submit" id="delete">Delete</button>
+          <input type="submit" value="Delete">
         </form>
 
         <form action="/doodles/<%= doodle._id %>?_method=PUT" method="POST">
@@ -49,6 +49,7 @@
           <% } %>>
           <input type="submit" value="Update">
         </form>
+
     <% } %>
     <% } %>
 
