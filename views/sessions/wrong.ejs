@@ -9,10 +9,14 @@
 
   <body>
     <header>
+
+      <% include ../partials/sidenav-login %>
+
       <h2>Wrong username or password...</h2>
       <form action="/sessions/login">
         <input type="submit" value="Return to login">
       </form>
+
     </header>
   </body>
 </html>

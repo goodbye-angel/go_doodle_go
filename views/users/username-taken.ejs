@@ -9,10 +9,14 @@
 
   <body>
     <header>
+
+      <% include ../partials/sidenav-login %>
+
       <h2>That username is taken. Please choose a different one.</h2>
       <form action="/users/register">
         <input type="submit" value="Return to sign up page">
       </form>
+
     </header>
   </body>
 </html>

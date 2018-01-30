@@ -43,3 +43,44 @@ button {
   margin: 0 auto;
   width: 115px;
 }
+
+.navicon {
+  width: 35px;
+  height: 5px;
+  background-color: #330f1e;
+  margin: 6px 0;
+}
+
+#navicon-all {
+	position: fixed;
+	top: 10px;
+	right: 15px;
+	cursor: pointer;
+}
+
+#sidenav {
+  height: 400px;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #02a9ea;
+  overflow-x: hidden;
+  padding-top: 30px;
+  border-radius: 3px;
+  transition: 0.5s;
+}
+
+#sidenav a {
+  padding: 10px 30px 10px 17px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #330f1e;
+  display: block;
+  transition: 0.3s;
+}
+
+#sidenav a:hover {
+  color: #583a46;
+}
