@@ -32,8 +32,22 @@
         <div class="all-doodles">
           <%- doodle.doodle %>
         </div>
+
         <form action="/doodles/<%= doodle._id %>?_method=DELETE" method="POST">
           <button type="submit" id="delete">Delete</button>
+        </form>
+
+        <form action="/doodles/<%= doodle._id %>?_method=PUT" method="POST">
+          Share doodle?
+          Yes<input type="radio" name="share" value="true"
+          <% if (doodle.share) { %>
+            checked
+          <% } %>>
+          No<input type="radio" name="share" value="false"
+          <% if (!doodle.share) { %>
+            checked
+          <% } %>>
+          <input type="submit" value="Update">
         </form>
     <% } %>
     <% } %>

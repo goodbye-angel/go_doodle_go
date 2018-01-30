@@ -30,6 +30,12 @@ router.post('/', async (req, res) => {
   res.redirect('/');
 });
 
+// update
+router.put('/:id', async (req, res) => {
+  await Doodles.findByIdAndUpdate(req.params.id, req.body);
+  res.redirect('/doodles/all');
+});
+
 // delete
 router.delete('/:id', async (req, res) => {
   await Doodles.findByIdAndRemove(req.params.id);
