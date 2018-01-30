@@ -30,16 +30,10 @@ router.post('/', async (req, res) => {
   res.redirect('/');
 });
 
-// show
-router.get('/:id', async (req, res) => {
-  const oneDoodle = await Doodles.findById(req.params.id);
-  res.render('doodles/show.ejs', { oneDoodle });
-});
-
-// edit
-router.put('/:id/edit', async (req, res) => {
-  const editDoodle = await Doodles.findByIdAndUpdate(req.params.id, req.body);
-  res.render('doodles/edit.ejs', { editDoodle });
+// delete
+router.delete('/:id', async (req, res) => {
+  await Doodles.findByIdAndRemove(req.params.id);
+  res.redirect('/doodles/all');
 });
 
 module.exports = router;

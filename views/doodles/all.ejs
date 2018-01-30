@@ -28,9 +28,13 @@
 
     <% for (let doodle of allDoodles) { %>
       <% if (doodle.user == currentUser._id) { %>
+        <div class="doodle-options">
         <div class="all-doodles">
           <%- doodle.doodle %>
         </div>
+        <form action="/doodles/<%= doodle._id %>?_method=DELETE" method="POST">
+          <button type="submit" id="delete">Delete</button>
+        </form>
     <% } %>
     <% } %>
 
