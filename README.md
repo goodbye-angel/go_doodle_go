@@ -10,9 +10,9 @@ It is deployed online at https://go-doodle-go.herokuapp.com/
 
 ## Wireframes
 
-![wireframe1](https://wireframe.cc/CyswH5)
+![wireframe main](http://jaqdunham.com/images/wireframe%20main.png)
 
-![wireframe2](https://wireframe.cc/yhboCc)
+![wireframe friends](http://jaqdunham.com/images/wireframe%20friends.png)
 
 ## Future Improvements
 - auto-login after registration
@@ -20,6 +20,7 @@ It is deployed online at https://go-doodle-go.herokuapp.com/
 - users can choose to allow additions/edits from other people
 - user profiles
 - follow/friend list functionality
+- suggestions/inspiration button
 
 ### Author
 
