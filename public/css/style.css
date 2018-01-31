@@ -33,12 +33,6 @@ canvas {
   border-radius: 3px;
 }
 
-.doodle-options {
-  display: flex;
-  flex-direction: column;
-  margin: 5px auto;
-}
-
 #color-picker {
   margin: 5px auto;
   display: flex;
@@ -131,14 +125,29 @@ canvas {
 	cursor: pointer;
 }
 
-#buttons {
+.options {
   margin: 5px auto;
   text-align: center;
 }
 
 button {
-  width: 100px;
-  margin: 5px;
+  margin: 5px auto;
+  width: 115px;
+  padding: 3px 0;
+  border-radius: 3px;
+  background-color: #5920bc;
+  color: #fffcff;
+  border: 0;
+}
+
+.button {
+  margin: 5px auto;
+  width: 115px;
+  padding: 3px 0;
+  border-radius: 3px;
+  background-color: #5920bc;
+  color: #fffcff;
+  border: 0;
 }
 
 #sidenav {
@@ -183,6 +192,7 @@ button {
   color: #330f1e;
   display: block;
   cursor: pointer;
+  margin-left: 5px;
 }
 
 #logout:hover {
@@ -198,6 +208,7 @@ button {
   color: #330f1e;
   display: block;
   cursor: pointer;
+  margin-left: 5px;
 }
 
 .modal {

@@ -36,12 +36,22 @@ form {
 
 input {
   text-align: center;
-  margin: 5px 0 5px 0;
+  margin: 5px 0;
+  border: 2px solid #02a9ea;
+  border-radius: 4px;
+  padding: 3px 0;
+  background-color: #02a9ea;
+  color: #330f1e;
 }
 
 button {
-  margin: 0 auto;
+  margin: 5px auto;
   width: 115px;
+  padding: 3px 0;
+  border-radius: 3px;
+  background-color: #5920bc;
+  color: #fffcff;
+  border: 0;
 }
 
 .navicon {
@@ -83,4 +93,16 @@ button {
 
 #sidenav a:hover {
   color: #583a46;
+}
+
+#about {
+  font-family: 'PT Sans', sans-serif;
+  background-color: #02a9ea;
+  width: 100px;
+  font-size: 25px;
+  border: none;
+  color: #330f1e;
+  display: block;
+  cursor: pointer;
+  margin-left: 5px;
 }
