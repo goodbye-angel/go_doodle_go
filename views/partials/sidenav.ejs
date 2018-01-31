@@ -6,6 +6,20 @@ function openNav() {
 function closeNav() {
     document.getElementById("sidenav").style.width = "0";
 }
+
+function openModal() {
+    document.getElementById("about-modal").style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById("about-modal").style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+      modal.style.display = "none";
+  }
+}
 </script>
 
 <div onclick="openNav()" id="navicon-all">
@@ -31,5 +45,16 @@ function closeNav() {
   <a href="/doodles/community">Community</a>
   <% } %>
 
-  <a href="#">About</a>
+  <button onclick="openModal()" id="about">About</button>
+</div>
+
+<div id="about-modal" class="modal">
+
+  <div class="modal-content">
+    <div onclick="closeModal()" id="close">X</div>
+    <p>Social doodling. Doodle things! Show them to your friends!</p>
+    <p>To save and share doodles, and see other users' doodles, please sign up. More features coming in the future!</p>
+    <p>GoDoodleGo was made with coffee, cats, late nights, and &#9829; by Jaq Dunham.</p>
+  </div>
+
 </div>

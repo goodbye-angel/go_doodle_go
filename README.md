@@ -16,7 +16,7 @@ It is deployed online at https://go-doodle-go.herokuapp.com/
 
 ## Future Improvements
 - auto-login after registration
-- ability for users to add edit drawings
+- ability for users to edit drawings
 - users can choose to allow additions/edits from other people
 - user profiles
 - follow/friend list functionality
@@ -24,4 +24,4 @@ It is deployed online at https://go-doodle-go.herokuapp.com/
 
 ### Author
 
-This application was built with late nights and love by Jaq Dunham as a project for the Web Development Immersive Remote program at General Assembly in January, 2018.
+This application was built with coffee, cats, late nights, and love by Jaq Dunham as a project for the Web Development Immersive Remote program at General Assembly in January, 2018.
